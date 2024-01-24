@@ -13,6 +13,11 @@
     <td>Create a Chess Game with ReactJS - Part 2: The pieces!</td>
     <td>1/24/2024</td>
 </tr>
+<tr>
+    <td><a href="https://youtu.be/coi5AoV53Es?si=xalgib4_6fwhzEtn">Part 3: Moving pieces</a></td>
+    <td>Create a Chess Game with ReactJS - Part 3: Moving pieces</td>
+    <td>1/24/2024</td>
+</tr>
 </table>
 
 # Getting Started with Create React App
