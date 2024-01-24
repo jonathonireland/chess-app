@@ -1,9 +1,18 @@
 <h1>React Chess App</h1>
 
+<p>I am following this <a href="https://www.youtube.com/playlist?list=PLBmRxydnERkysOgOS917Ojc_-uisgb8Aj">Youtube series</a> from <a href="https://www.youtube.com/@FrontendCoding">@FrontendCoding</a> to build a React.Js Chess app. Once I am done following a video (and the code I derived from the video works) I will push up my progress pertaining to that video in a commit, I will also privide the date I pushed that change up here in the table below. </p>
 <table>
-<tr><th>Youtube Link</th><th>Title</th><th>Commit #</th><th>Date</th></tr>
-<tr><td>https://youtu.be/Iri__zwxwHg?si=iDO4l2P3dyeASPoO</td><td>Create a Chess Game with ReactJS - Part 1: The board!</td><td>#1</td><td>1/23/2024</td></tr>
-
+<tr><th>Youtube Link</th><th>Title</th><th>Date</th></tr>
+<tr>
+    <td><a href="https://youtu.be/Iri__zwxwHg?si=iDO4l2P3dyeASPoO">Part 1: The board!</a></td>
+    <td>Create a Chess Game with ReactJS - Part 1: The board!</td>
+    <td>1/23/2024</td>
+</tr>
+<tr>
+    <td><a href="https://www.youtube.com/watch?v=HKMcqyfRQoE">Part 2: The pieces!</a></td>
+    <td>Create a Chess Game with ReactJS - Part 2: The pieces!</td>
+    <td>1/24/2024</td>
+</tr>
 </table>
 
 # Getting Started with Create React App
