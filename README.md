@@ -1,3 +1,11 @@
+<h1>React Chess App</h1>
+
+<table>
+<tr><th>Youtube Link</th><th>Title</th><th>Commit #</th><th>Date</th></tr>
+<tr><td>https://youtu.be/Iri__zwxwHg?si=iDO4l2P3dyeASPoO</td><td>Create a Chess Game with ReactJS - Part 1: The board!</td><td>#1</td><td>1/23/2024</td></tr>
+
+</table>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
