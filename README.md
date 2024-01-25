@@ -28,6 +28,11 @@
     <td>Create a Chess Game with ReactJS - Part 5: Grid snapping</td>
     <td>1/25/2024</td>
 </tr>
+<tr>
+    <td><a href="https://youtu.be/sjgJ-srZrsU?si=M8TxOPPjRWmq0B5I">Part 6: The referee</a</td>
+    <td>Create a Chess Game with ReactJS - Part 6: The referee</td>
+    <td>1/25/2024</td>
+</tr>
 </table>
 
 # Getting Started with Create React App
