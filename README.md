@@ -23,6 +23,11 @@
     <td>Create a Chess Game with ReactJS - Part 4: Movement control</td>
     <td>1/25/2024</td>
 </tr>
+<tr>
+    <td><a href="https://youtu.be/JzCKJOCR3PI?si=QsSlF4lJGEW89wsv">Part 5: Grid Snapping</a</td>
+    <td>Create a Chess Game with ReactJS - Part 5: Grid snapping</td>
+    <td>1/25/2024</td>
+</tr>
 </table>
 
 # Getting Started with Create React App
