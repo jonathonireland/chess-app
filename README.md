@@ -33,6 +33,11 @@
     <td>Create a Chess Game with ReactJS - Part 6: The referee</td>
     <td>1/25/2024</td>
 </tr>
+<tr>
+    <td><a href="https://youtu.be/sX0HM52iH8o?si=8Qe8sjr0VqpXqPsH">Part 7: Basic Pawn Rules</a></td>
+    <td>Create a Chess Game with ReactJS - Part 7: Basic Pawn Rules</td>
+    <td>1/26/2024</td>
+</tr>
 </table>
 
 # Getting Started with Create React App
