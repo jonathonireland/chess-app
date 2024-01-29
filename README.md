@@ -43,6 +43,11 @@
     <td>Creaet a Chess Game with ReactJS - Part 8: Attacking Pawn</td>
     <td>1/26/2024</td>
 </tr>
+<tr>
+    <td><a href="https://youtu.be/K92YUaS858M?si=F4EbZlslY9p42l5s">Part 9: En passant</a></td>
+    <td>Create a Chess Game with ReactJS - Part 9: En passant</td>
+    <td>1/29/2024</td>
+</tr>
 </table>
 
 # Getting Started with Create React App
