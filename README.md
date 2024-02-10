@@ -43,6 +43,10 @@
     <td><a href="https://youtu.be/a1Fr-EnrAS8?si=_4Gbd81RBN6tZfuH">Part 10: Refactoring</a></td>
     <td>2/9/2024</td>
 </tr>
+<tr>
+    <td><a href="https://youtu.be/d8mrqf71exU?si=rDnyzxgkvty2fv-i">Part 11: Knight Moves</a></td>
+    <td>2/10/2024</td>
+</tr>
 </table>
 
 # Getting Started with Create React App

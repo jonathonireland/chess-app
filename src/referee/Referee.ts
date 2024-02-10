@@ -1,15 +1,16 @@
-import { PieceType, TeamType, Piece, Position } from "../Constants";
+import { PieceType, TeamType, Piece, Position, samePosition } from "../Constants";
 
 export default class Referee {
     tileIsOccupied(
-        x: number, 
-        y: number, 
+        position: Position,
         boardState: Piece[]
     ): boolean 
     {
         console.log("Checking to see if tile is occupied...");
         
-        const piece = boardState.find((p) => p.position.x === x && p.position.y === y);
+        const piece = boardState.find(
+            (p) => samePosition(p.position, position)
+        );
 
         if (piece) {
             return true;
@@ -20,19 +21,30 @@ export default class Referee {
     } 
 
     tileIsOccupiedByOpponent(
-        x: number, 
-        y: number, 
+        position: Position, 
         boardState: Piece[], 
         team: TeamType
     ): boolean 
     {
-        const piece = boardState.find((p) => p.position.x === x && p.position.y === y && p.team !== team);
+        const piece = boardState.find(
+            (p) => samePosition(p.position, position) && p.team !== team);
         if (piece){
             return true;
         }
         else {
             return false;
         }
+    }
+
+    tileIsEmptyOrOccupiedByOpponent(
+        position: Position,
+        boardState: Piece[],
+        team: TeamType
+    ){
+        return(
+            !this.tileIsOccupied(position, boardState) ||
+            this.tileIsOccupiedByOpponent(position, boardState, team)
+        )
     }
 
     isEnPassantMove(
@@ -81,12 +93,16 @@ export default class Referee {
             // Movement Logic
             if(initialPosition.x === desiredPosition.x && initialPosition.y === specialRow && desiredPosition.y - initialPosition.y === 2 * pawnDirection ) {
                 if(
-                    !this.tileIsOccupied(desiredPosition.x, desiredPosition.y, boardState) && 
-                    !this.tileIsOccupied(desiredPosition.x, desiredPosition.y - pawnDirection, boardState)){
+                    !this.tileIsOccupied(desiredPosition, boardState) && 
+                    !this.tileIsOccupied({
+                        x: desiredPosition.x, 
+                        y: desiredPosition.y - pawnDirection 
+                    }, 
+                        boardState)){
                     return true;
                 }
             } else if (initialPosition.x === desiredPosition.x && desiredPosition.y - initialPosition.y === pawnDirection){
-                if(!this.tileIsOccupied(desiredPosition.x, desiredPosition.y, boardState)){
+                if(!this.tileIsOccupied(desiredPosition, boardState)){
                     return true;
                 }
             }
@@ -94,17 +110,53 @@ export default class Referee {
             else if (desiredPosition.x - initialPosition.x === -1 && desiredPosition.y - initialPosition.y === pawnDirection) {
                 // Attack in upper or bottom left corner
                 console.log("upper / bottom left");
-                if(this.tileIsOccupiedByOpponent(desiredPosition.x, desiredPosition.y, boardState, team)){
+                if(this.tileIsOccupiedByOpponent(desiredPosition, boardState, team)){
                     return true;
                 }
             }
             else if (desiredPosition.x - initialPosition.x === 1 && desiredPosition.y - initialPosition.x === pawnDirection){
                 // Attack in upper or bottom right corner
                 console.log("upper / bottom right");
-                if(this.tileIsOccupiedByOpponent(desiredPosition.x, desiredPosition.y, boardState, team)){
+                if(this.tileIsOccupiedByOpponent(desiredPosition, boardState, team)){
                     return true;
                 }
             }
+        } else if(type === PieceType.KNIGHT){
+          
+            for(let i = -1; i < 2; i+=2){
+                for (let j = -1; j < 2; j+=2){
+                    if(desiredPosition.y - initialPosition.y === 2 * i){
+                        if(desiredPosition.x - initialPosition.x === j){
+                            console.log("Top/Bottom left/right knight movement");
+                            if(
+                                this.tileIsEmptyOrOccupiedByOpponent(
+                                    desiredPosition,
+                                    boardState,
+                                    team
+                                )
+                            ){
+                                return true;
+                            }
+                        }   
+                    }
+                    if(desiredPosition.x - initialPosition.x === 2 * i) {
+                        if(desiredPosition.y - initialPosition.y === j){
+                            if(
+                                this.tileIsEmptyOrOccupiedByOpponent(
+                                    desiredPosition,
+                                    boardState,
+                                    team
+                                )
+                            ){
+                                return true;
+                            }
+                        }
+                    }
+                }
+                
+            }
+
+            
         }
 
         return false;       
