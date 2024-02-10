@@ -2,51 +2,46 @@
 
 <p>I am following this <a href="https://www.youtube.com/playlist?list=PLBmRxydnERkysOgOS917Ojc_-uisgb8Aj">Youtube series</a> from <a href="https://www.youtube.com/@FrontendCoding">@FrontendCoding</a> to build a React.Js Chess app. Once I am done following a video (and the code I derived from the video works) I will push up my progress pertaining to that video in a commit, I will also privide the date I pushed that change up here in the table below. </p>
 <table>
-<tr><th>Youtube Link</th><th>Title</th><th>Date</th></tr>
+<tr><th>Youtube Link</th><th>Date</th></tr>
 <tr>
     <td><a href="https://youtu.be/Iri__zwxwHg?si=iDO4l2P3dyeASPoO">Part 1: The board!</a></td>
-    <td>Create a Chess Game with ReactJS - Part 1: The board!</td>
     <td>1/23/2024</td>
 </tr>
 <tr>
     <td><a href="https://www.youtube.com/watch?v=HKMcqyfRQoE">Part 2: The pieces!</a></td>
-    <td>Create a Chess Game with ReactJS - Part 2: The pieces!</td>
     <td>1/24/2024</td>
 </tr>
 <tr>
     <td><a href="https://youtu.be/coi5AoV53Es?si=xalgib4_6fwhzEtn">Part 3: Moving pieces</a></td>
-    <td>Create a Chess Game with ReactJS - Part 3: Moving pieces</td>
     <td>1/24/2024</td>
 </tr>
 <tr>
     <td><a href="https://youtu.be/zgZOm4iD32U?si=hLXA5R7y3hYEIWML">Part 4: Finishing Movement Control</a></td>
-    <td>Create a Chess Game with ReactJS - Part 4: Movement control</td>
     <td>1/25/2024</td>
 </tr>
 <tr>
     <td><a href="https://youtu.be/JzCKJOCR3PI?si=QsSlF4lJGEW89wsv">Part 5: Grid Snapping</a</td>
-    <td>Create a Chess Game with ReactJS - Part 5: Grid snapping</td>
     <td>1/25/2024</td>
 </tr>
 <tr>
     <td><a href="https://youtu.be/sjgJ-srZrsU?si=M8TxOPPjRWmq0B5I">Part 6: The referee</a</td>
-    <td>Create a Chess Game with ReactJS - Part 6: The referee</td>
     <td>1/25/2024</td>
 </tr>
 <tr>
     <td><a href="https://youtu.be/sX0HM52iH8o?si=8Qe8sjr0VqpXqPsH">Part 7: Basic Pawn Rules</a></td>
-    <td>Create a Chess Game with ReactJS - Part 7: Basic Pawn Rules</td>
     <td>1/26/2024</td>
 </tr>
 <tr>
     <td><a href="https://youtu.be/KDGYZRe8cYI?si=jMadpuc99GWUnLDp">Part 8: Attacking Pawn</a></td>
-    <td>Creaet a Chess Game with ReactJS - Part 8: Attacking Pawn</td>
     <td>1/26/2024</td>
 </tr>
 <tr>
     <td><a href="https://youtu.be/K92YUaS858M?si=F4EbZlslY9p42l5s">Part 9: En passant</a></td>
-    <td>Create a Chess Game with ReactJS - Part 9: En passant</td>
     <td>1/29/2024</td>
+</tr>
+<tr>
+    <td><a href="https://youtu.be/a1Fr-EnrAS8?si=_4Gbd81RBN6tZfuH">Part 10: Refactoring</a></td>
+    <td>2/9/2024</td>
 </tr>
 </table>
 
