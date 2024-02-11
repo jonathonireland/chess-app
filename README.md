@@ -52,7 +52,7 @@
     <td>2/10/2024</td>
 </tr>
 <tr>
-    <td><a href="https://youtu.be/8vmukUQze6Q?si=zaWWr0gPo6OyCwOy">Part 13: Bishop Logic</a></td>
+    <td><a href="https://youtu.be/8vmukUQze6Q?si=zaWWr0gPo6OyCwOy">Part 13: Bishop Moves</a></td>
     <td>2/11/2024</td>
 </tr>
 </table>
