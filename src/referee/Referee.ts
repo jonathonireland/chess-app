@@ -158,38 +158,57 @@ export default class Referee {
 
             
         } else if(type === PieceType.BISHOP) {
-            // Top Right Movement
+            
             for (let i = 1; i < 8; i++)
             {
+                // Top Right Movement
+                if(desiredPosition.x  > initialPosition.x && desiredPosition.y > initialPosition.y){
+                    let passedPosition: Position = {x: initialPosition.x + i, y: initialPosition.y + i};
+                    if(this.tileIsOccupied(passedPosition, boardState)){
+                        console.log("Illegal move");
+                        break;
+                    }
+                }
                 if (desiredPosition.x - initialPosition.x === i && desiredPosition.y - initialPosition.y === i){
-                    console.log(`Moving up right ${i} squares.`);
-                    break;
+                    return true;
                 }
-            }            
-            // Bottom Right Movement
-            for (let i = 1; i < 8; i++)
-            {
+                
+                // Bottom Right Movement
+                if(desiredPosition.x > initialPosition.x && desiredPosition.y > initialPosition.y){
+                    let passedPosition: Position = {x: initialPosition.x + i, y: initialPosition.y - i};
+                    if(this.tileIsOccupied(passedPosition, boardState)){
+                        console.log("Illegal Move");
+                        break;
+                    }
+                }
                 if (desiredPosition.x - initialPosition.x === i && desiredPosition.y - initialPosition.y === -i){
-                    console.log(`Moving down right ${i} squares.`);
-                    break;
+                    return true;
                 }
-            }   
-            // Bottom Left Movement
-            for (let i = 1; i < 8; i++)
-            {
+
+                // Bottom Left Movement
+                if (desiredPosition.x < initialPosition.x && desiredPosition.y < initialPosition.y){
+                    let passedPosition: Position = {x: initialPosition.x - i, y: initialPosition.y - i};
+                    if(this.tileIsOccupied(passedPosition, boardState)){
+                        console.log("Illegal Move")
+                        break;
+                    }
+                }
                 if (desiredPosition.x - initialPosition.x === -i && desiredPosition.y - initialPosition.y === -i){
-                    console.log(`Moving down left ${i} squares.`);
-                    break;
+                    return true;
                 }
-            } 
-            // Top Left Movement
-            for (let i = 1; i < 8; i++)
-            {
+                // Top Left Movement
+                if (desiredPosition.x < initialPosition.x && desiredPosition.y > initialPosition.y){
+                    let passedPosition: Position = {x: initialPosition.x - i, y: initialPosition.y + i};
+                    if(this.tileIsOccupied(passedPosition, boardState)){
+                        console.log("Illegal Move");
+                        break;
+                    }
+                }
                 if (desiredPosition.x - initialPosition.x === -i && desiredPosition.y - initialPosition.y === i){
-                    console.log(`Moving up left ${i} squares.`);
-                    break;
+                    return true;
                 }
-            }  
+            }
+            
         }
 
         return false;       
