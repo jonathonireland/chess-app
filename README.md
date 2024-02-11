@@ -55,6 +55,10 @@
     <td><a href="https://youtu.be/8vmukUQze6Q?si=zaWWr0gPo6OyCwOy">Part 13: Bishop Moves</a></td>
     <td>2/11/2024</td>
 </tr>
+<tr>
+    <td><a href="https://youtu.be/NjHvS-RzVBk?si=Puo0ee0smvwUveqt">Part 14: Bishop Attack</a></td>
+    <td>2/11/2024</td>
+</tr>
 </table>
 
 # Getting Started with Create React App
