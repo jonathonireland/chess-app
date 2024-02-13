@@ -1,6 +1,7 @@
 <h1>React Chess App</h1>
 
 <p>I am following this <a href="https://www.youtube.com/playlist?list=PLBmRxydnERkysOgOS917Ojc_-uisgb8Aj">Youtube series</a> from <a href="https://www.youtube.com/@FrontendCoding">@FrontendCoding</a> to build a React.Js Chess app. Once I am done following a video (and the code I derived from the video works) I will push up my progress pertaining to that video in a commit, I will also privide the date I pushed that change up here in the table below. </p>
+<img src="https://www.jonathonireland.com/resume/data/files/Screenshot 2024-02-13 at 12.58.46 AM.png" alt="React Chess Board Image" />
 <table>
 <tr><th>Youtube Link</th><th>Date</th></tr>
 <tr>
@@ -61,6 +62,10 @@
 </tr>
 <tr>
     <td><a href="https://youtu.be/BsAN5n7iIbQ?si=WydnvQtIw1GSYW2A">Part 15: Rook Logic</a></td>
+    <td>2/13/2024</td>
+</tr>
+<tr>
+    <td><a href="https://youtu.be/ccyK-z_c2z4?si=_fikwqgllRobaNQH">Part 16: Rook Movement & Attack (and refactor)</a></td>
     <td>2/13/2024</td>
 </tr>
 </table>
