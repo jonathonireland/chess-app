@@ -48,12 +48,20 @@
     <td>2/10/2024</td>
 </tr>
 <tr>
-    <td><a href="https://youtu.be/ndek8MlGnYw?si=2Rnm-ifIgyPalsl1">Part 12: Bishop logic</a></td>
+    <td><a href="https://youtu.be/ndek8MlGnYw?si=2Rnm-ifIgyPalsl1">Part 12: Bishop Logic</a></td>
     <td>2/10/2024</td>
 </tr>
 <tr>
     <td><a href="https://youtu.be/8vmukUQze6Q?si=zaWWr0gPo6OyCwOy">Part 13: Bishop Moves</a></td>
     <td>2/11/2024</td>
+</tr>
+<tr>
+    <td><a href="https://youtu.be/NjHvS-RzVBk?si=aGHQANQq5-dY_8IEy">Part 14: Bishop Attack</a></td>
+    <td>2/11/2024</td>
+</tr>
+<tr>
+    <td><a href="https://youtu.be/BsAN5n7iIbQ?si=ow8WhRXfrURIVGfb">Part 15: Rook Logic</a></td>
+    <td>2/13/2024</td>
 </tr>
 </table>
 
