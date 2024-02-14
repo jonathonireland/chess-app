@@ -6,7 +6,6 @@ export default class Referee {
         boardState: Piece[]
     ): boolean 
     {
-        console.log("Checking to see if tile is occupied...");
         
         const piece = boardState.find(
             (p) => samePosition(p.position, position)
@@ -104,14 +103,12 @@ export default class Referee {
       // Attack Logic
       else if (desiredPosition.x - initialPosition.x === -1 && desiredPosition.y - initialPosition.y === pawnDirection) {
           // Attack in upper or bottom left corner
-          console.log("upper / bottom left");
           if(this.tileIsOccupiedByOpponent(desiredPosition, boardState, team)){
               return true;
           }
       }
       else if (desiredPosition.x - initialPosition.x === 1 && desiredPosition.y - initialPosition.x === pawnDirection){
           // Attack in upper or bottom right corner
-          console.log("upper / bottom right");
           if(this.tileIsOccupiedByOpponent(desiredPosition, boardState, team)){
               return true;
           }
@@ -242,7 +239,6 @@ export default class Referee {
       boardState: Piece[]
     ):boolean{
       if (initialPosition.x === desiredPosition.x){
-        console.log("Moving vertically!");
           
         for(let i = 1; i < 8; i++){
           let multiplier = (desiredPosition.y < initialPosition.y) ? -1 : 1;
@@ -261,7 +257,6 @@ export default class Referee {
         }
       }
       if (initialPosition.y === desiredPosition.y){
-        console.log("Moving Horizontally!");
 
         for(let i = 1; i < 8; i++){
           let multiplier = (desiredPosition.x < initialPosition.x) ? -1 : 1;
@@ -273,7 +268,6 @@ export default class Referee {
               return true;
             }
           } else {
-            console.log("Passing by...");
             if(this.tileIsOccupied(passedPosition, boardState)){
               break;
             }
@@ -292,24 +286,8 @@ export default class Referee {
       
       for (let i = 1; i < 8; i ++){
       
-        let multiplierX; 
-        let multiplierY;
-
-        if (desiredPosition.x < initialPosition.x){
-          multiplierX = -1;
-        } else if(desiredPosition.x > initialPosition.x){
-          multiplierX = 1;
-        } else {
-          multiplierX = 0;
-        }
-        
-        if(desiredPosition.y < initialPosition.y){
-          multiplierY = -1;
-        } else if(desiredPosition.y > initialPosition.y){
-          multiplierY = 1;
-        } else {
-          multiplierY = 0;
-        }
+        let multiplierX = (desiredPosition.x < initialPosition.x) ? -1 : (desiredPosition.x > initialPosition.x) ? 1 : 0; 
+        let multiplierY = (desiredPosition.y < initialPosition.y) ? -1 : (desiredPosition.y > initialPosition.y) ? 1 : 0;
         
         let passedPosition: Position = {x: initialPosition.x + (i * multiplierX), y: initialPosition.y + (i * multiplierY)};
         if(samePosition(passedPosition, desiredPosition)){
@@ -326,6 +304,42 @@ export default class Referee {
       }
       return false;
     }
+
+    kingMove(
+      initialPosition: Position,
+      desiredPosition: Position,
+      team: TeamType,
+      boardState: Piece[]
+    ):boolean {
+      
+      for (let i = 1; i < 2; i ++){
+      
+        let multiplierX = (desiredPosition.x < initialPosition.x) ? -1 : (desiredPosition.x > initialPosition.x) ? 1 : 0; 
+        let multiplierY = (desiredPosition.y < initialPosition.y) ? -1 : (desiredPosition.y > initialPosition.y) ? 1 : 0;
+        
+        let passedPosition: Position = {x: initialPosition.x + (i * multiplierX), y: initialPosition.y + (i * multiplierY)};
+        if(samePosition(passedPosition, desiredPosition)){
+            // destination tile
+            if(this.tileIsEmptyOrOccupiedByOpponent(passedPosition, boardState, team)){
+                return true;
+            }
+        } else {
+            // passing tile
+            if(this.tileIsOccupied(passedPosition, boardState)){
+                break;
+            }
+        }
+      }
+      return false;
+    }
+
+    // TODO:
+    // 1. Pawn Promotion
+    // 2. Prevent The King from moving into danger.
+    // 3. When a king and rook have not moved, but the pieces between them have moved, castling can occur
+    // 4. Checks
+    // 5. Checkmate!
+    // 6. Stalemate
 
     isValidMove(
         initialPosition: Position,
@@ -350,6 +364,9 @@ export default class Referee {
           break;
         case PieceType.QUEEN:
           validMove = this.queenMove(initialPosition, desiredPosition, team, boardState);
+          break;
+        case PieceType.KING:
+          validMove = this.kingMove(initialPosition, desiredPosition, team, boardState);
       }
     return validMove;
     }
