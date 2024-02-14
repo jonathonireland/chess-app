@@ -68,6 +68,10 @@
     <td><a href="https://youtu.be/ccyK-z_c2z4?si=_fikwqgllRobaNQH">Part 16: Rook Movement & Attack (and refactor)</a></td>
     <td>2/13/2024</td>
 </tr>
+<tr>
+    <td><a href="https://youtu.be/K8xYjdvZHmo?si=mjjnoDfmfiNgZaBS">Part 17: Queen Setup (and some extra work)</a></td>
+    <td>2/13/2024</td>
+</tr>
 </table>
 
 # Getting Started with Create React App
