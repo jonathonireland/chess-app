@@ -137,7 +137,6 @@ export default function Chessboard() {
                             results.push(piece);
                         } else if(!(samePosition(piece.position, {x, y}))) {
                             if(piece.type === PieceType.PAWN){
-                                console.log("En passant false");
                                 piece.enPassant = false;
                             }
                             results.push(piece);
