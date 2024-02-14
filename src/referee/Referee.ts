@@ -1,52 +1,8 @@
-import { PieceType, TeamType, Piece, Position, samePosition } from "../Constants";
+import { PieceType, TeamType, Piece, Position } from "../Constants";
 import { pawnMove, knightMove, bishopMove , rookMove, queenMove, kingMove} from './rules';
 
 export default class Referee {
-    tileIsOccupied(
-        position: Position,
-        boardState: Piece[]
-    ): boolean 
-    {
-        
-        const piece = boardState.find(
-            (p) => samePosition(p.position, position)
-        );
-
-        if (piece) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    } 
-
-    tileIsOccupiedByOpponent(
-        position: Position, 
-        boardState: Piece[], 
-        team: TeamType
-    ): boolean 
-    {
-        const piece = boardState.find(
-            (p) => samePosition(p.position, position) && p.team !== team);
-        if (piece){
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    tileIsEmptyOrOccupiedByOpponent(
-        position: Position,
-        boardState: Piece[],
-        team: TeamType
-    ){
-        return(
-            !this.tileIsOccupied(position, boardState) ||
-            this.tileIsOccupiedByOpponent(position, boardState, team)
-        )
-    }
-
+    
     isEnPassantMove(
         initialPosition: Position,
         desiredPosition: Position,
