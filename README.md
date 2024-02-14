@@ -72,6 +72,10 @@
     <td><a href="https://youtu.be/K8xYjdvZHmo?si=mjjnoDfmfiNgZaBS">Part 17: Queen Setup (and some extra work)</a></td>
     <td>2/13/2024</td>
 </tr>
+<tr>
+    <td><a href="https://youtu.be/D2Rxmfs916I?si=wuz_dUSInLgrOi8j">Part 18: Queen Finished</a></td>
+    <td>2/13/2024</td>
+</tr>
 </table>
 
 # Getting Started with Create React App
