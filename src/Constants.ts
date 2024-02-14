@@ -42,7 +42,7 @@ export const initialBoardState: Piece[] = [
     {image: `assets/images/rook_b.png`, position: {x:0, y:7}, type: PieceType.ROOK, team: TeamType.OPPONENT},
     {image: `assets/images/knight_b.png`, position: {x:1, y:7}, type: PieceType.KNIGHT, team: TeamType.OPPONENT},
     {image: `assets/images/bishop_b.png`, position: {x:2, y:7}, type: PieceType.BISHOP, team: TeamType.OPPONENT},
-    {image: `assets/images/queen_b.png`, position: {x:3, y:7}, type: PieceType.QUEEN, team: TeamType.OPPONENT},
+    {image: `assets/images/queen_b.png`, position: {x:3, y:3}, type: PieceType.QUEEN, team: TeamType.OPPONENT},
     {image: `assets/images/king_b.png`, position: {x:4, y:7}, type: PieceType.KING, team: TeamType.OPPONENT},
     {image: `assets/images/bishop_b.png`, position: {x:5, y:7}, type: PieceType.BISHOP, team: TeamType.OPPONENT},
     {image: `assets/images/knight_b.png`, position: {x:6, y:7}, type: PieceType.KNIGHT, team: TeamType.OPPONENT},
