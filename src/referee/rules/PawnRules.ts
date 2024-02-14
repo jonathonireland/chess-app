@@ -10,7 +10,9 @@ export const pawnMove = (
     const pawnDirection = (team === TeamType.OUR) ? 1 : -1;
 
     // Movement Logic
-    if(initialPosition.x === desiredPosition.x && initialPosition.y === specialRow && desiredPosition.y - initialPosition.y === 2 * pawnDirection ) {
+    if(initialPosition.x === desiredPosition.x && 
+        initialPosition.y === specialRow && 
+        desiredPosition.y - initialPosition.y === 2 * pawnDirection ) {
         if(
             !tileIsOccupied(desiredPosition, boardState) && 
             !tileIsOccupied({
@@ -20,19 +22,29 @@ export const pawnMove = (
                 boardState)){
             return true;
         }
-    } else if (initialPosition.x === desiredPosition.x && desiredPosition.y - initialPosition.y === pawnDirection){
+    } 
+    else if (
+        initialPosition.x === desiredPosition.x && 
+        desiredPosition.y - initialPosition.y === pawnDirection
+    ){
         if(!tileIsOccupied(desiredPosition, boardState)){
             return true;
         }
     }
     // Attack Logic
-    else if (desiredPosition.x - initialPosition.x === -1 && desiredPosition.y - initialPosition.y === pawnDirection) {
+    else if (
+        desiredPosition.x - initialPosition.x === -1 && 
+        desiredPosition.y - initialPosition.y === pawnDirection
+    ) {
         // Attack in upper or bottom left corner
         if(tileIsOccupiedByOpponent(desiredPosition, boardState, team)){
             return true;
         }
     }
-    else if (desiredPosition.x - initialPosition.x === 1 && desiredPosition.y - initialPosition.x === pawnDirection){
+    else if (
+        desiredPosition.x - initialPosition.x === 1 && 
+        desiredPosition.y - initialPosition.y === pawnDirection
+    ){
         // Attack in upper or bottom right corner
         if(tileIsOccupiedByOpponent(desiredPosition, boardState, team)){
             return true;

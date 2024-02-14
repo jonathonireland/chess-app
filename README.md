@@ -84,6 +84,11 @@
     <td><a href="https://youtu.be/qBWKG0mdsAg?si=HrMlnWTNUE5lLIJ7">Part 20: Refactoring Referee</a></td>
     <td>2/14/2024</td>
 </tr>
+<tr>
+    <td><a href="https://youtu.be/xEA_2lSV-ow?si=5pKd_rHmWXAugBuE">Part 21: Pawn Promotion</a></td>
+    <td>2/14/2024</td>
+</tr>
+
 </table>
 
 # Getting Started with Create React App

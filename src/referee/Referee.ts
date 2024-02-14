@@ -1,4 +1,4 @@
-import { PieceType, TeamType, Piece, Position, samePosition } from "../Constants";
+import { PieceType, TeamType, Piece, Position } from "../Constants";
 import { pawnMove, knightMove, bishopMove , rookMove, queenMove, kingMove} from './rules';
 
 export default class Referee {
