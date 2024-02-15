@@ -92,11 +92,11 @@
     <td><a href="https://youtu.be/27dtFOb61tM?si=uPB4WDQlzzsLL0SO">Part 22: Preview Moves</a></td>
     <td>2/15/2024</td>
 </tr>
-<!-- <tr>
-    <td><a href="https://youtu.be/EgutGRqw_oI?si=YMAIsr-m12mcALCS">Part 23: Preview Done</a></td>
-    <td>2//2024</td>
-</tr>
 <tr>
+    <td><a href="https://youtu.be/EgutGRqw_oI?si=YMAIsr-m12mcALCS">Part 23: Preview Done</a></td>
+    <td>2/15/2024</td>
+</tr>
+<!--<tr>
     <td><a href="https://youtu.be/PsKw6u5SAA8?si=RbQXrXmY0ZKTfCkh">Part 24: Referee Component</a></td>
     <td>2//2024</td>
 </tr>
