@@ -88,7 +88,46 @@
     <td><a href="https://youtu.be/xEA_2lSV-ow?si=5pKd_rHmWXAugBuE">Part 21: Pawn Promotion</a></td>
     <td>2/14/2024</td>
 </tr>
-
+<tr>
+    <td><a href="https://youtu.be/27dtFOb61tM?si=uPB4WDQlzzsLL0SO">Part 22: Preview Moves</a></td>
+    <td>2/15/2024</td>
+</tr>
+<!-- <tr>
+    <td><a href="https://youtu.be/EgutGRqw_oI?si=YMAIsr-m12mcALCS">Part 23: Preview Done</a></td>
+    <td>2//2024</td>
+</tr>
+<tr>
+    <td><a href="https://youtu.be/PsKw6u5SAA8?si=RbQXrXmY0ZKTfCkh">Part 24: Referee Component</a></td>
+    <td>2//2024</td>
+</tr>
+<tr>
+    <td><a href="https://youtu.be/faMfrApfV7o?si=mbZkMwjC8R0ckXxd">Part 25: Object-Oriented</a></td>
+    <td>2//2024</td>
+</tr>
+<tr>
+    <td><a href="https://youtu.be/ZMLywTMmSq0?si=RIUyCi_ewEIdnOZP">Part 26: Class Inheritance</a></td>
+    <td>2//2024</td>
+</tr>
+<tr>
+    <td><a href="https://youtu.be/N2EU7vtwsWE?si=jhdExv5OE0zmALQ6">Part 27: Cloning</a></td>
+    <td>2//2024</td>
+</tr>
+<tr>
+    <td><a href="https://youtu.be/U_0JmKTWf48?si=uPhjMrEZyD97m0Du">Part 28: King Danger</a></td>
+    <td>2//2024</td>
+</tr>
+<tr>
+    <td><a href="https://youtu.be/p9FMvX6fGAU?si=cynJJjUGTdjZlujA">Part 29: King Protection</a></td>
+    <td>2//2024</td>
+</tr>
+<tr>
+    <td><a href="https://youtu.be/wNyPCPBBfRo?si=qbLj4SztjLy0Y7wx">Part 30: Castling Logic</a></td>
+    <td>2//2024</td>
+</tr>
+<tr>
+    <td><a href="https://youtu.be/veo12qNIJ7o?si=hx6Oprodv_8Kj50Q">Part 31: Checkmate</a></td>
+    <td>2//2024</td>
+</tr> -->
 </table>
 
 # Getting Started with Create React App
