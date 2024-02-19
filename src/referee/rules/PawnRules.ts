@@ -1,5 +1,7 @@
-import { TeamType, Position, Piece, samePosition, PieceType } from  '../../Constants';
+import { TeamType, samePosition, PieceType } from  '../../Constants';
+import { Piece, Position } from '../../models';
 import { tileIsOccupied, tileIsOccupiedByOpponent } from './GeneralRules';
+
 export const pawnMove = ( 
     (initialPosition: Position,
     desiredPosition: Position,
@@ -16,10 +18,8 @@ export const pawnMove = (
     ) {
         if(
             !tileIsOccupied(desiredPosition, boardState) && 
-            !tileIsOccupied({
-                x: desiredPosition.x, 
-                y: desiredPosition.y - pawnDirection 
-            }, 
+            !tileIsOccupied(
+                new Position(desiredPosition.x, desiredPosition.y-pawnDirection), 
                 boardState)){
             return true;
         }
@@ -59,12 +59,12 @@ export const getPossiblePawnMoves = (pawn: Piece, boardState: Piece[]) : Positio
 	const specialRow = (pawn.team === TeamType.OUR) ? 1 : 6;
 	const pawnDirection = pawn.team === TeamType.OUR ? 1 : -1;
 	
-	const normalMove: Position = { x: pawn.position.x, y: pawn.position.y + pawnDirection };
-	const specialMove: Position = { x: pawn.position.x, y: pawn.position.y + pawnDirection * 2 };
-	const upperLeftAttack: Position = { x: pawn.position.x - 1, y: pawn.position.y + pawnDirection };
-	const upperRightAttack: Position = { x: pawn.position.x + 1, y: pawn.position.y + pawnDirection };
-	const leftPosition: Position = { x: pawn.position.x -1, y: pawn.position.y };
-	const rightPosition: Position = { x: pawn.position.x +1, y: pawn.position.y };
+	const normalMove = new Position(pawn.position.x, pawn.position.y + pawnDirection);
+	const specialMove = new Position(pawn.position.x, pawn.position.y + pawnDirection * 2);
+	const upperLeftAttack = new Position(pawn.position.x - 1, pawn.position.y + pawnDirection);
+	const upperRightAttack = new Position(pawn.position.x + 1, pawn.position.y + pawnDirection);
+	const leftPosition = new Position(pawn.position.x -1, pawn.position.y);
+	const rightPosition = new Position(pawn.position.x +1, pawn.position.y);
 	
 	if (
 		!tileIsOccupied(normalMove, boardState)

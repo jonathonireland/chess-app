@@ -1,4 +1,5 @@
-import { Position, TeamType, Piece, samePosition } from '../../Constants';
+import { TeamType, samePosition } from '../../Constants';
+import { Piece, Position } from '../../models';
 import { tileIsOccupied, tileIsOccupiedByOpponent, tileIsEmptyOrOccupiedByOpponent } from './GeneralRules';
 
 export const bishopMove = (
@@ -11,7 +12,7 @@ export const bishopMove = (
       {
           // Top Right Movement
           if(desiredPosition.x  > initialPosition.x && desiredPosition.y > initialPosition.y){
-              let passedPosition: Position = {x: initialPosition.x + i, y: initialPosition.y + i};
+              let passedPosition = new Position(initialPosition.x + i, initialPosition.y + i);
               if(samePosition(passedPosition, desiredPosition)){
                   // destination tile
                   if(tileIsEmptyOrOccupiedByOpponent(passedPosition, boardState, team)){
@@ -27,7 +28,7 @@ export const bishopMove = (
           
           // Bottom Right Movement
           if(desiredPosition.x > initialPosition.x && desiredPosition.y < initialPosition.y){
-              let passedPosition: Position = {x: initialPosition.x + i, y: initialPosition.y - i};
+              let passedPosition = new Position(initialPosition.x + i, initialPosition.y - i);
               // Check if the tile is the destination tile
               if(samePosition(passedPosition, desiredPosition)){
                   // destination tile
@@ -44,7 +45,7 @@ export const bishopMove = (
 
           // Bottom Left Movement
           if (desiredPosition.x < initialPosition.x && desiredPosition.y < initialPosition.y){
-              let passedPosition: Position = {x: initialPosition.x - i, y: initialPosition.y - i};
+              let passedPosition = new Position(initialPosition.x - i, initialPosition.y - i);
               // Check if the tile is the destination tile
               if(samePosition(passedPosition, desiredPosition)){
                   // destination tile
@@ -60,7 +61,7 @@ export const bishopMove = (
           
           // Top Left Movement
           if (desiredPosition.x < initialPosition.x && desiredPosition.y > initialPosition.y){
-              let passedPosition: Position = {x: initialPosition.x - i, y: initialPosition.y + i};
+              let passedPosition = new Position(initialPosition.x - i, initialPosition.y + i);
               // Check if the tile is the destination tile
               if(samePosition(passedPosition, desiredPosition)){
                   // destination tile
@@ -83,7 +84,7 @@ export const getPossibleBishopMoves = (bishop: Piece, boardState: Piece[]): Posi
 		// Top right movement
     for (let i = 1; i < 8; i++)
     {
-			const destination: Position = {x: bishop.position.x + i, y: bishop.position.y + i};
+			const destination = new Position(bishop.position.x + i, bishop.position.y + i);
 			
 			if (!tileIsOccupied(destination, boardState))
 			{
@@ -98,7 +99,7 @@ export const getPossibleBishopMoves = (bishop: Piece, boardState: Piece[]): Posi
 		// Bottom right movement
     for (let i = 1; i < 8; i++)
     {
-			const destination: Position = {x: bishop.position.x + i, y: bishop.position.y - i};
+			const destination = new Position(bishop.position.x + i, bishop.position.y - i);
 			
 			if (!tileIsOccupied(destination, boardState))
 			{
@@ -113,7 +114,7 @@ export const getPossibleBishopMoves = (bishop: Piece, boardState: Piece[]): Posi
 		// Top left movement
 		for (let i = 1; i < 8; i++)
 		{
-			const destination: Position = {x: bishop.position.x - i, y: bishop.position.y - i};
+			const destination = new Position(bishop.position.x - i, bishop.position.y - i);
 
 			if (!tileIsOccupied(destination, boardState))
 			{
@@ -128,7 +129,7 @@ export const getPossibleBishopMoves = (bishop: Piece, boardState: Piece[]): Posi
 		// Bottom left movement
 		for (let i = 1; i < 8; i++)
 		{
-			const destination: Position = {x: bishop.position.x - i, y: bishop.position.y + i};
+			const destination = new Position(bishop.position.x - i, bishop.position.y + i);
 
 			if (!tileIsOccupied(destination, boardState))
 			{

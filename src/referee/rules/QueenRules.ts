@@ -1,4 +1,5 @@
-import {Position, TeamType, Piece, samePosition } from '../../Constants';
+import { TeamType, samePosition } from '../../Constants';
+import { Piece, Position } from '../../models';
 import { tileIsOccupied, tileIsOccupiedByOpponent, tileIsEmptyOrOccupiedByOpponent } from './GeneralRules';
 
 export const queenMove = (
@@ -29,7 +30,7 @@ export const queenMove = (
         multiplierY = 0;
       }
       
-      let passedPosition: Position = {x: initialPosition.x + (i * multiplierX), y: initialPosition.y + (i * multiplierY)};
+      let passedPosition = new Position(initialPosition.x + (i * multiplierX), initialPosition.y + (i * multiplierY));
       if(samePosition(passedPosition, desiredPosition)){
           // destination tile
           if(tileIsEmptyOrOccupiedByOpponent(passedPosition, boardState, team)){
@@ -51,7 +52,7 @@ export const queenMove = (
     // Top Movement
     for (let i = 1; i < 8; i++)
     {
-      const destination: Position = {x: queen.position.x, y: queen.position.y + i};
+      const destination = new Position(queen.position.x, queen.position.y + i);
 			
 			if (!tileIsOccupied(destination, boardState))
 			{
@@ -66,7 +67,7 @@ export const queenMove = (
     // Bottom Movement
     for (let i = 1; i < 8; i++)
     {
-      const destination: Position = {x: queen.position.x, y: queen.position.y - i};
+      const destination = new Position(queen.position.x, queen.position.y - i);
 			
 			if (!tileIsOccupied(destination, boardState))
 			{
@@ -81,7 +82,7 @@ export const queenMove = (
     // Left Movement
     for (let i = 1; i < 8; i++)
     {
-      const destination: Position = {x: queen.position.x - i, y: queen.position.y};
+      const destination = new Position(queen.position.x - i, queen.position.y);
       
       if (!tileIsOccupied(destination, boardState))
       {
@@ -96,7 +97,7 @@ export const queenMove = (
     // Right Movement
     for (let i = 1; i < 8; i++)
     {
-      const destination: Position = {x: queen.position.x + i, y: queen.position.y};
+      const destination = new Position(queen.position.x + i, queen.position.y);
       
       if (!tileIsOccupied(destination, boardState))
       {
@@ -111,7 +112,7 @@ export const queenMove = (
     // Top right movement
     for (let i = 1; i < 8; i++)
     {
-			const destination: Position = {x: queen.position.x + i, y: queen.position.y + i};
+			const destination = new Position(queen.position.x + i, queen.position.y + i);
 			
 			if (!tileIsOccupied(destination, boardState))
 			{
@@ -126,7 +127,7 @@ export const queenMove = (
 		// Bottom right movement
     for (let i = 1; i < 8; i++)
     {
-			const destination: Position = {x: queen.position.x + i, y: queen.position.y - i};
+			const destination = new Position(queen.position.x + i, queen.position.y - i);
 			
 			if (!tileIsOccupied(destination, boardState))
 			{
@@ -141,7 +142,7 @@ export const queenMove = (
 		// Top left movement
 		for (let i = 1; i < 8; i++)
 		{
-			const destination: Position = {x: queen.position.x - i, y: queen.position.y - i};
+			const destination = new Position(queen.position.x - i, queen.position.y - i);
 
 			if (!tileIsOccupied(destination, boardState))
 			{
@@ -156,7 +157,7 @@ export const queenMove = (
 		// Bottom left movement
 		for (let i = 1; i < 8; i++)
 		{
-			const destination: Position = {x: queen.position.x - i, y: queen.position.y + i};
+			const destination = new Position(queen.position.x - i, queen.position.y + i);
 
 			if (!tileIsOccupied(destination, boardState))
 			{

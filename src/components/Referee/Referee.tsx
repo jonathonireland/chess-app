@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Piece, PieceType, Position, TeamType, initialBoardState, samePosition } from "../../Constants";
+import { PieceType, TeamType, initialBoardState, samePosition } from "../../Constants";
 import Chessboard from "../Chessboard/Chessboard";
 import { bishopMove, getPossibleBishopMoves, getPossibleKingMoves, getPossibleKnightMoves, getPossiblePawnMoves, getPossibleQueenMoves, getPossibleRookMoves, kingMove, knightMove, pawnMove, queenMove, rookMove } from "../../referee/rules";
+import { Piece, Position } from "../../models";
 
 export default function Referee() { 
   const [pieces, setPieces] = useState<Piece[]>(initialBoardState);
@@ -45,7 +46,7 @@ export default function Referee() {
         piece.position.x = destination.x;
         piece.position.y = destination.y;
         results.push(piece);
-      } else if (!(samePosition(piece.position, {x: destination.x, y: destination.y-pawnDirection}))) {
+      } else if (!(samePosition(piece.position, new Position(destination.x, destination.y-pawnDirection)))) {
         if(piece.type === PieceType.PAWN){
           piece.enPassant = false;
         }
@@ -75,7 +76,7 @@ export default function Referee() {
               setPromotionPawn(piece);
             }
             results.push(piece);
-          } else if(!(samePosition(piece.position, {x:destination.x, y:destination.y}))) {
+          } else if(!(samePosition(piece.position, new Position(destination.x, destination.y)))) {
             console.log("not grabbed"+piece);
             if(piece.type === PieceType.PAWN){
               piece.enPassant = false;
