@@ -1,5 +1,3 @@
-import React from 'react';
-import Chessboard from './components/Chessboard/Chessboard';
 import Referee from './components/Referee/Referee';
 import './App.css';
 
