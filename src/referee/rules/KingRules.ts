@@ -1,4 +1,4 @@
-import { TeamType, samePosition } from '../../Constants';
+import { TeamType } from '../../Types';
 import { Piece, Position } from '../../models';
 import { tileIsOccupied, tileIsOccupiedByOpponent, tileIsEmptyOrOccupiedByOpponent } from './GeneralRules';
 
@@ -15,7 +15,7 @@ export const kingMove = (
       let multiplierY = (desiredPosition.y < initialPosition.y) ? -1 : (desiredPosition.y > initialPosition.y) ? 1 : 0;
       
       let passedPosition: Position = new Position(initialPosition.x + (i * multiplierX), initialPosition.y + (i * multiplierY));
-      if(samePosition(passedPosition, desiredPosition)){
+      if(passedPosition.samePosition(desiredPosition)){
           // destination tile
           if(tileIsEmptyOrOccupiedByOpponent(passedPosition, boardState, team)){
               return true;
