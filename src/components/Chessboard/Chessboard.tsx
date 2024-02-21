@@ -5,8 +5,7 @@ import {
     HORIZONTAL_AXIS, 
     VERTICAL_AXIS, 
     GRID_SIZE, 
-    BOARD_SIZE, 
-    samePosition
+    BOARD_SIZE
 } from '../../Constants';
 import { Piece, Position } from "../../models";
 
@@ -81,7 +80,7 @@ export default function Chessboard({ playMove, pieces}: Props) {
 				const y = Math.abs(Math.ceil((e.clientY - chessboard.offsetTop -BOARD_SIZE) / GRID_SIZE));
 
 				const currentPiece = pieces.find(
-						(p) => samePosition(p.position, grabPosition)
+						(p) => p.samePosition(grabPosition)
 				);
 				
 				if (currentPiece) {
@@ -101,12 +100,12 @@ export default function Chessboard({ playMove, pieces}: Props) {
     for(let j = VERTICAL_AXIS.length - 1; j >= 0; j--) {
 			for (let i=0; i < HORIZONTAL_AXIS.length; i++) {
 				const number = j + i + 2;
-				let piece = pieces.find(p => samePosition(p.position, new Position( i, j)));
+				let piece = pieces.find(p => p.samePosition(new Position( i, j)));
 				let image = piece ? piece.image : undefined;
 
-				let currentPiece = activePiece != null ? pieces.find(p=>samePosition(p.position, grabPosition)): undefined;
+				let currentPiece = activePiece != null ? pieces.find(p=>p.samePosition(grabPosition)): undefined;
 
-				let highlight = currentPiece?.possibleMoves ? currentPiece.possibleMoves.some(p=>samePosition(p, new Position(i , j))) : false;
+				let highlight = currentPiece?.possibleMoves ? currentPiece.possibleMoves.some(p=>p.samePosition(new Position(i , j))) : false;
 
 				board.push(<Tile key={`${j},${i}`} image={image} number={number} highlight={highlight} />);
 
