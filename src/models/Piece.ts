@@ -38,7 +38,7 @@ export class Piece {
     return this.type === PieceType.KING;
   }
 
-  get isQheen() : boolean { 
+  get isQueen() : boolean { 
     return this.type === PieceType.QUEEN;
   }
 

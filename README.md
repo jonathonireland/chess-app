@@ -112,11 +112,11 @@
     <td><a href="https://youtu.be/N2EU7vtwsWE?si=jhdExv5OE0zmALQ6">Part 27: Cloning</a></td>
     <td>2/21/2024</td>
 </tr>
-<!--<tr>
-    <td><a href="https://youtu.be/U_0JmKTWf48?si=uPhjMrEZyD97m0Du">Part 28: King Danger</a></td>
-    <td>2//2024</td>
-</tr>
 <tr>
+    <td><a href="https://youtu.be/U_0JmKTWf48?si=uPhjMrEZyD97m0Du">Part 28: King Danger</a></td>
+    <td>2/22/2024</td>
+</tr>
+<!--<tr>
     <td><a href="https://youtu.be/p9FMvX6fGAU?si=cynJJjUGTdjZlujA">Part 29: King Protection</a></td>
     <td>2//2024</td>
 </tr>
