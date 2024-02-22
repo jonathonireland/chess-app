@@ -12,4 +12,7 @@ export class Position {
       this.y === otherPosition.y;
   }
 
+  clone(): Position {
+    return new Position(this.x, this.y);
+  }
 }
