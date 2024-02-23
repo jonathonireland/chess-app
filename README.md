@@ -149,12 +149,12 @@
     <td>2/23/2024</td>
     <td>Part-29-king-protection</td>
 </tr>
-<!--<tr>
+<tr>
     <td><a href="https://youtu.be/wNyPCPBBfRo?si=qbLj4SztjLy0Y7wx">Part 30: Castling Logic</a></td>
     <td>2//2024</td>
     <td>Part-30-Castling-Logic</td>
 </tr>
-<tr>
+<!--<tr>
     <td><a href="https://youtu.be/veo12qNIJ7o?si=hx6Oprodv_8Kj50Q">Part 31: Checkmate</a></td>
     <td>2//2024</td>
     <td>Part-31-Checkmate</td>

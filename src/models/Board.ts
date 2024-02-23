@@ -1,5 +1,5 @@
 import { PieceType, TeamType } from "../Types";
-import { getPossibleBishopMoves, getPossibleKingMoves, getPossibleKnightMoves, getPossiblePawnMoves, getPossibleQueenMoves, getPossibleRookMoves } from "../referee/rules";
+import { getPossibleBishopMoves, getPossibleKingMoves, getPossibleKnightMoves, getPossiblePawnMoves, getPossibleQueenMoves, getPossibleRookMoves, getCastlingMoves } from "../referee/rules";
 import { Pawn } from "./Pawn";
 import { Piece } from "./Piece";
 import { Position } from "./Position";
@@ -23,6 +23,11 @@ export class Board {
       piece.possibleMoves = this.getValidMoves(piece, this.pieces); //getValidMoves(p,currentPieces)
     }
 
+    // Calculate the moves of all the pieces
+    for (const king of this.pieces.filter(p => p.isKing)) {
+      if (king.possibleMoves === undefined) continue;
+      king.possibleMoves = [...king.possibleMoves, ...getCastlingMoves(king, this.pieces)];
+    }
     // Check if the king moves are valid
  
     this.checkCurrentTeamMoves();
@@ -106,6 +111,7 @@ export class Board {
             ( piece as Pawn ).enPassant = false;
           piece.position.x = destination.x;
           piece.position.y = destination.y;
+          piece.hasMoved = true;
           results.push(piece);
         } else if (! piece.samePosition(destination)) {
           if ( piece.isPawn ) {
@@ -130,7 +136,7 @@ export class Board {
               }
               piece.position.x = destination.x;
               piece.position.y = destination.y;
-            
+              piece.hasMoved = true;
               results.push(piece);
             } else if(!piece.position.samePosition(new Position(destination.x, destination.y))) {
               console.log("not grabbed"+piece);
