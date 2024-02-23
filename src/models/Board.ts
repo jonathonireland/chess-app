@@ -26,21 +26,20 @@ export class Board {
     if (king?.possibleMoves === undefined) return;
 
     for (const move of king.possibleMoves) { 
-      king.position = move;
+      
       const simulatedBoard = this.clone();
 
       const pieceAtDestination = simulatedBoard.pieces.find(p => p.samePosition(move));
-
-      const simulatedKing = simulatedBoard.pieces.find(p => p.isKing && p.team === TeamType.OPPONENT);
       
-      simulatedKing!.position = move;
+      const simulatedKing = simulatedBoard.pieces.find(p => p.isKing && p.team === TeamType.OPPONENT);      
+      simulatedKing!.position = move; 
 
       for (const enemy of simulatedBoard.pieces.filter(p => p.team === TeamType.OUR)) {
         enemy.possibleMoves = simulatedBoard.getValidMoves(enemy, simulatedBoard.pieces);
       }
     
       // if there is a piece at the destination remove it
-      if (!pieceAtDestination !== undefined) {
+      if (pieceAtDestination !== undefined) {
         simulatedBoard.pieces = simulatedBoard.pieces.filter(p => !p.samePosition(move));
       }
 
