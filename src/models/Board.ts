@@ -6,9 +6,11 @@ import { Position } from "./Position";
 
 export class Board {
   pieces: Piece[];
+  totalTurns: number;
   
-  constructor(pieces: Piece[]) { 
+  constructor(pieces: Piece[], totalTurns: number) { 
     this.pieces = pieces;
+    this.totalTurns = 1;
   }
 
   calculateAllMoves() {
@@ -53,9 +55,11 @@ export class Board {
           const possiblePawnMoves = simulatedBoard.getValidMoves(p, simulatedBoard.pieces);
           if (possiblePawnMoves?.some(ppm => ppm.x !== p.position.x && ppm.samePosition(move))) {
             safe = false;
+            break;
           }
         } else if (p.possibleMoves?.some(p => p.samePosition(move))) {
           safe = false;
+          break;
         }
       }
 
@@ -143,11 +147,7 @@ export class Board {
   }
 
   clone(): Board { 
-    return new Board(
-      this.pieces.map(
-        p => p.clone()
-      )
-    );
+    return new Board(this.pieces.map(p => p.clone()), this.totalTurns);
   }
 
 }

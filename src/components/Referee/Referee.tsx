@@ -22,6 +22,19 @@ export default function Referee() {
 
   function playMove(playedPiece: Piece, destination: Position): boolean {
     if (playedPiece.possibleMoves === undefined) return false;
+    if (
+      playedPiece.team === TeamType.OUR &&
+      board.totalTurns % 2 !== 1
+    ) {
+      console.log("invalid turn w!");
+    }
+
+    if (
+      playedPiece.team === TeamType.OPPONENT &&
+      board.totalTurns % 2 !== 0
+    ) { 
+      console.log("Invalid Turn B");
+    }
     
     let playedMoveIsValid = false;
 
@@ -39,14 +52,17 @@ export default function Referee() {
     // playmove modifies the board ths we 
     // need to call setBoard
     setBoard((previousBoard) => {
+      const clonedBoard = board.clone();
+
       // Playing the move
       playedMoveIsValid = board.playMove(
         enPassantMove,
         validMove,
         playedPiece,
         destination);
+      clonedBoard.totalTurns += 1;
       
-      return board.clone();
+      return clonedBoard;
     });
     
     // This is for promoting a pawn
@@ -150,6 +166,7 @@ export default function Referee() {
 
   return (
     <>
+      <p style={{color: "white", fontSize:"24px"}}>{board.totalTurns}</p>
       <div id="pawn-promotion-modal" className="hidden" ref={modalRef}>
           <div className="modal-body">
               <img onClick={() => promotePawn(PieceType.ROOK)} src={`/assets/images/rook_${promotionTeamType()}.png`} alt="Rook Piece" />
