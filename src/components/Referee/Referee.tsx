@@ -134,15 +134,16 @@ export default function Referee() {
     setBoard((previousBoard) => { 
       const clonedBoard = board.clone();
 
-      clonedBoard.pieces = clonedBoard.pieces.reduce((results, piece) => {
-        if (piece.samePiecePosition(promotionPawn)) {
-          results.push(new Piece(piece.position.clone(), pieceType, piece.team));
-        } else {
+      clonedBoard.pieces = clonedBoard.pieces.reduce(
+        (results, piece) => {
+          if (piece.samePiecePosition(promotionPawn)) {
+            results.push(new Piece(piece.position.clone(), pieceType, piece.team, true));
+          } else {
+            results.push(piece);
+          }
           results.push(piece);
-        }
-        results.push(piece);
-        return results;
-      }, [] as Piece[]);
+          return results;
+        }, [] as Piece[]);
     
       clonedBoard.calculateAllMoves();
       return clonedBoard;
