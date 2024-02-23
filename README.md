@@ -118,7 +118,7 @@
 </tr>
 <tr>
     <td><a href="https://youtu.be/p9FMvX6fGAU?si=cynJJjUGTdjZlujA">Part 29: King Protection</a></td>
-    <td>2//2024</td>
+    <td>2/23/2024</td>
 </tr>
 <!--<tr>
     <td><a href="https://youtu.be/wNyPCPBBfRo?si=qbLj4SztjLy0Y7wx">Part 30: Castling Logic</a></td>
