@@ -13,15 +13,16 @@ export default function Referee() {
   const modalRef = useRef<HTMLDivElement>(null); 
   
   useEffect(() => { 
-    updatePossibleMoves();
+    board.calculateAllMoves();
   },[]);
 
-  function updatePossibleMoves() {
-    board.calculateAllMoves();
-  }
-
   function playMove(playedPiece: Piece, destination: Position): boolean {
+    // if the playing piece doesn't have any moves, return
     if (playedPiece.possibleMoves === undefined) return false;
+    // prevent the inactive team from playing
+    if (playedPiece.team === TeamType.OUR && board.totalTurns % 2 !== 1) return false;
+    if (playedPiece.team === TeamType.OPPONENT && board.totalTurns % 2 !== 0) return false;
+
     
     let playedMoveIsValid = false;
 
@@ -38,20 +39,26 @@ export default function Referee() {
 
     // playmove modifies the board ths we 
     // need to call setBoard
-    setBoard((previousBoard) => {
+    setBoard(previousBoard => {
+      const clonedBoard = previousBoard.clone();
+      // Increment totalTurns
+      clonedBoard.totalTurns +=1;
       // Playing the move
-      playedMoveIsValid = board.playMove(
+      playedMoveIsValid = clonedBoard.playMove(
         enPassantMove,
         validMove,
         playedPiece,
-        destination);
-      
-      return board.clone();
+        destination
+      );
+      return clonedBoard;
     });
     
     // This is for promoting a pawn
     let promotionRow = (playedPiece.team === TeamType.OUR) ? 7 : 0;
-    if(destination.y === promotionRow && playedPiece.isPawn){
+    if (
+      destination.y === promotionRow &&
+      playedPiece.isPawn
+    ) {
       modalRef.current?.classList.remove("hidden");
       setPromotionPawn((previousPromotionPawn) => { 
         const clonedPlayedPiece = playedPiece.clone();
@@ -150,6 +157,7 @@ export default function Referee() {
 
   return (
     <>
+      <p style={{ color: "white", fontSize: "24px" }}>{board.totalTurns} {board.totalTurns % 2 === 0 ? `Black Player: Make Your Move`:`White Player: Make Your Move` }</p>
       <div id="pawn-promotion-modal" className="hidden" ref={modalRef}>
           <div className="modal-body">
               <img onClick={() => promotePawn(PieceType.ROOK)} src={`/assets/images/rook_${promotionTeamType()}.png`} alt="Rook Piece" />
