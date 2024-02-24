@@ -170,8 +170,10 @@ export const getCastlingMoves = (king: Piece, boardState: Piece[]): Position[] =
     // Determine if we need to go to right or to the left side
     const direction = (rook.position.x - king.position.x > 0) ? 1 : -1;
     const adjacentPosition = king.position.clone();
-    adjacentPosition.x += direction;
+    adjacentPosition.x -= direction;
+    
     if (rook.possibleMoves?.some(m => m.samePosition(adjacentPosition))) continue;
+    
     const concerningTiles = rook.possibleMoves?.filter(m => m.y === king.position.y);
     
     const enemyPieces = boardState.filter(p => p.team !== king.team);
@@ -181,18 +183,18 @@ export const getCastlingMoves = (king: Piece, boardState: Piece[]): Position[] =
     for (const enemy of enemyPieces) { 
       if (enemy.possibleMoves === undefined) continue;
 
-      for (const move of enemy.possibleMoves) {
-        if (concerningTiles?.some(t => t.samePosition(move))) {
-          valid = false;
-        }
-        if (!valid)
-        break;
-      }
+      // for (const move of enemy.possibleMoves) {
+      //   if (concerningTiles?.some(t => t.samePosition(move))) {
+      //     valid = false;
+      //   }
+      //   if (!valid)
+      //   break;
+      // }
       // check if any of the possible moves the enemy has is present in the 
       // concerning tiles array
-      // if (enemy.possibleMoves?.some(m => concerningTiles?.some(t => t.samePosition(m)))) {
-      //   valid = false;
-      // }
+      if (enemy.possibleMoves?.some(m => concerningTiles?.some(t => t.samePosition(m)))) {
+        valid = false;
+      }
       // if (enemyPieces.some(p => p.possibleMoves?.some(m => concerningTiles?.some(t => t.samePosition(m))))) continue;
 
       if (!valid)
@@ -200,7 +202,7 @@ export const getCastlingMoves = (king: Piece, boardState: Piece[]): Position[] =
 
       // we now want to add it as a possible move!
       possibleMoves.push(rook.position.clone());
-      
+
     }
     if (!valid) continue;
   }
