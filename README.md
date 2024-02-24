@@ -4,6 +4,8 @@
 <img src="https://www.jonathonireland.com/resume/data/files/Screenshot 2024-02-13 at 12.58.46 AM.png" alt="React Chess Board Image" />
 <h2>Bugs List</h2>
 <p>Just finished this from my attempt to follow all 31 tutorials. I will start a bug list here and start fixing them. As it stands now I have worked through all 31 tutorials in the span of about 31 days. This was a great learning experience!</p>
+
+<h2>Chess App Project Branches and Timeline</h2>
 <table>
 <tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
 <tr>
@@ -61,6 +63,9 @@
     <td>2/10/2024</td>
     <td>Part-11-Knight-Movement</td>
 </tr>
+</table>
+<img src="https://www.jonathonireland.com/resume/data/files/ReacttKnightMoves.png" alt="React Chess App Knight Moves Preview" />
+<table>
 <tr>
     <td><a href="https://youtu.be/ndek8MlGnYw?si=2Rnm-ifIgyPalsl1">Part 12: Bishop Logic</a></td>
     <td>2/10/2024</td>
@@ -96,6 +101,10 @@
     <td>2/13/2024</td>
     <td>Part-18-Queen-Finished</td>
 </tr>
+</table>
+<img src="https://www.jonathonireland.com/resume/data/files/ReacttQueenMoves.png" alt="React Chess App Queen Moves Preview" />
+<table>
+<tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
 <tr>
     <td><a href="https://youtu.be/CmoPebnJktU?si=vx_hLpfp-Rq-mkhf">Part 19: The King</a></td>
     <td>2/14/2024</td>
