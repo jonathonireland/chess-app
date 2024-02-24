@@ -64,8 +64,9 @@
     <td>Part-11-Knight-Movement</td>
 </tr>
 </table>
-<img src="https://www.jonathonireland.com/resume/data/files/ReacttKnightMoves.png" alt="React Chess App Knight Moves Preview" />
+<img src="https://www.jonathonireland.com/resume/data/files/ReactKnightMoves.png" alt="React Chess App Knight Moves Preview" />
 <table>
+<tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
 <tr>
     <td><a href="https://youtu.be/ndek8MlGnYw?si=2Rnm-ifIgyPalsl1">Part 12: Bishop Logic</a></td>
     <td>2/10/2024</td>
