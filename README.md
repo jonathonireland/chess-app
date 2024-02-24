@@ -125,6 +125,10 @@
     <td>2/14/2024</td>
     <td>Part-21-Pawn-Promotion</td>
 </tr>
+</table>
+<img src="https://www.jonathonireland.com/resume/data/files/ReactPawnPromotion.png"  alt="React Chess App Pawn Promotion example."/>
+<table>
+<tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
 <tr>
     <td><a href="https://youtu.be/27dtFOb61tM?si=uPB4WDQlzzsLL0SO">Part 22: Preview Moves</a></td>
     <td>2/15/2024</td>
@@ -135,6 +139,12 @@
     <td>2/15/2024</td>
     <td></td>
 </tr>
+</table>
+<h3>Pawn Moves (Previewed)</h3>
+<p>Below is an image of the moves with circles around the pices that the white pawn can attack.</p>
+<img src="https://www.jonathonireland.com/resume/data/files/ReactPawnAttackingMoves.png" alt="React Chess App Pawn Preview Attacking Moves" />
+<table>
+<tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
 <tr>
     <td><a href="https://youtu.be/PsKw6u5SAA8?si=RbQXrXmY0ZKTfCkh">Part 24: Referee Component</a></td>
     <td>2/18/2024</td>
