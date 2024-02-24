@@ -126,6 +126,8 @@
     <td>Part-21-Pawn-Promotion</td>
 </tr>
 </table>
+<h3>Pawn Promotion Example</h3>
+<p>Below is an image of the pawn promotion modal when activated because a pawn has made it's way accross the board.</p>
 <img src="https://www.jonathonireland.com/resume/data/files/ReactPawnPromotion.png"  alt="React Chess App Pawn Promotion example."/>
 <table>
 <tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
