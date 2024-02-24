@@ -199,3 +199,5 @@ export const initialBoard: Board = new Board([
         false
     )
 ], 1);
+
+initialBoard.calculateAllMoves();

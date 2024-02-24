@@ -2,6 +2,8 @@
 
 <p>I am following this <a href="https://www.youtube.com/playlist?list=PLBmRxydnERkysOgOS917Ojc_-uisgb8Aj">Youtube series</a> from <a href="https://www.youtube.com/@FrontendCoding">@FrontendCoding</a> to build a React.Js Chess app. Once I am done following a video (and the code I derived from the video works) I will push up my progress pertaining to that video in a commit, I will also privide the date I pushed that change up here in the table below. </p>
 <img src="https://www.jonathonireland.com/resume/data/files/Screenshot 2024-02-13 at 12.58.46 AM.png" alt="React Chess Board Image" />
+<h2>Bugs List</h2>
+<p>Just finished this from my attempt to follow all 31 tutorials. I will start a bug list here and start fixing them. As it stands now I have worked through all 31 tutorials in the span of about 31 days. This was a great learning experience!</p>
 <table>
 <tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
 <tr>
@@ -154,11 +156,11 @@
     <td>2/23/2024</td>
     <td>Part-30-Castling-Logic</td>
 </tr>
-<!--<tr>
+<tr>
     <td><a href="https://youtu.be/veo12qNIJ7o?si=hx6Oprodv_8Kj50Q">Part 31: Checkmate</a></td>
-    <td>2//2024</td>
+    <td>2/24/2024</td>
     <td>Part-31-Checkmate</td>
-</tr> -->
+</tr>
 </table>
 
 # Getting Started with Create React App
