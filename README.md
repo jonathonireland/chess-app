@@ -64,6 +64,8 @@
     <td>Part-11-Knight-Movement</td>
 </tr>
 </table>
+<h3>Knight Moves (Previewed)</h3>
+<p>Below the black knight's moves are previewed when it's selected by the black player.</p>
 <img src="https://www.jonathonireland.com/resume/data/files/ReactKnightMoves.png" alt="React Chess App Knight Moves Preview" />
 <table>
 <tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
@@ -103,6 +105,8 @@
     <td>Part-18-Queen-Finished</td>
 </tr>
 </table>
+<h3>Queen Moves (Previewed)</h3>
+<p>Below the white queen's moves are previewed when it's selected by the white player.</p>
 <img src="https://www.jonathonireland.com/resume/data/files/ReacttQueenMoves.png" alt="React Chess App Queen Moves Preview" />
 <table>
 <tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
