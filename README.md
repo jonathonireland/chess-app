@@ -14,7 +14,7 @@
 </td>
 <td>
 <ol>
-<li>Add Captured Pieces to screen<li>
+<li>Add Captured Pieces to screen</li>
 <li>Add a scrolling list of moves made to the screen.</li>
 <li>Add a persistant data storage for games played and movs made.</li>
 </ol>
