@@ -1,5 +1,6 @@
 {
   "name": "chess-app",
+  "homepage": "https://www.jonathonireland.com/chess-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
