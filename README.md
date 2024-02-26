@@ -2,7 +2,24 @@
 
 <p>I am following this <a href="https://www.youtube.com/playlist?list=PLBmRxydnERkysOgOS917Ojc_-uisgb8Aj">Youtube series</a> from <a href="https://www.youtube.com/@FrontendCoding">@FrontendCoding</a> to build a React.Js Chess app. Once I am done following a video (and the code I derived from the video works) I will push up my progress pertaining to that video in a commit, I will also privide the date I pushed that change up here in the table below. </p>
 <img src="https://www.jonathonireland.com/resume/data/files/Screenshot 2024-02-13 at 12.58.46 AM.png" alt="React Chess Board Image" />
-<h2>Bugs List</h2>
+<table>
+<tr><th>Bugs List</th><th>Development Objectives</th></tr>
+<tr><ol>
+<li>Once the king is in check other pieces cannot rescue the king.</li>
+<li>Castling should only be possible (and pieces circled when possible moves are implied) when the spaces between the king and rook are vacant.</li>
+<li>Once castling has happened, the king's possible moves shouldnt include moving on top of the rook.</li>
+</ol>
+<td>
+</td>
+<td>
+<ol>
+<li>Add Captured Pieces to screen<li>
+<li>Add a scrolling list of moves made to the screen.</li>
+<li>Add a persistant data storage for games played and movs made.</li>
+</ol>
+</td>
+</tr>
+</table>
 <p>Just finished this from my attempt to follow all 31 tutorials. I will start a bug list here and start fixing them. As it stands now I have worked through all 31 tutorials in the span of about 31 days. This was a great learning experience!</p>
 
 <h2>Chess App Project Branches and Timeline</h2>
