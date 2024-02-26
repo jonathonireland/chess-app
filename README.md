@@ -2,8 +2,7 @@
 
 <p>To find my chess app click here: <a href="https://jonathonireland.com/chess-app">https://jonathonireland.com/chess-app</a></p>
 
-<p>I followed this <a href="https://www.youtube.com/playlist?list=PLBmRxydnERkysOgOS917Ojc_-uisgb8Aj">Youtube series</a> from <a href="https://www.youtube.com/@FrontendCoding">@FrontendCoding</a> to build a React.Js Chess app. Once I am done following a video (and the code I derived from the video works) I will push up my progress pertaining to that video in a commit, I will also privide the date I pushed that change up here in the table below. 
-Now that I have concluded the tutorial, I am noting bugs in a bugs list and when I finish the bugs, I will start further development objectives as time allows.</p>
+<p>I followed this <a href="https://www.youtube.com/playlist?list=PLBmRxydnERkysOgOS917Ojc_-uisgb8Aj">Youtube series</a> from <a href="https://www.youtube.com/@FrontendCoding">@FrontendCoding</a> to build a React.Js Chess app. Once I was done following a video (and the code I derived from the video worked well enough to compile and function) I pushed up my progress pertaining to that video in a commit. I also privided the date I pushed that change in the table below and where possible if I created a branch for that tutorial I listed the name of that branch here too. Now that I have concluded the tutorial, I am noting bugs in a bugs list and when I finish the bugs, I will start further development objectives as time allows.</p>
 <img src="https://www.jonathonireland.com/resume/data/files/Screenshot 2024-02-13 at 12.58.46 AM.png" alt="React Chess Board Image" />
 <table>
 <tr><th>Bugs List</th><th>Development Objectives</th></tr>
@@ -24,7 +23,6 @@ Now that I have concluded the tutorial, I am noting bugs in a bugs list and when
 </td>
 </tr>
 </table>
-<p>Just finished this from my attempt to follow all 31 tutorials. I will start a bug list here and start fixing them. As it stands now I have worked through all 31 tutorials in the span of about 31 days. This was a great learning experience!</p>
 
 <h2>Chess App Project Branches and Timeline</h2>
 <table>
