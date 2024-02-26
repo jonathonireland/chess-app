@@ -4,12 +4,13 @@
 <img src="https://www.jonathonireland.com/resume/data/files/Screenshot 2024-02-13 at 12.58.46 AM.png" alt="React Chess Board Image" />
 <table>
 <tr><th>Bugs List</th><th>Development Objectives</th></tr>
-<tr><ol>
+<tr>
+<td>
+<ol>
 <li>Once the king is in check other pieces cannot rescue the king.</li>
 <li>Castling should only be possible (and pieces circled when possible moves are implied) when the spaces between the king and rook are vacant.</li>
 <li>Once castling has happened, the king's possible moves shouldnt include moving on top of the rook.</li>
 </ol>
-<td>
 </td>
 <td>
 <ol>
