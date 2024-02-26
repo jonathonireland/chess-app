@@ -2,6 +2,9 @@
 
 <p>I am following this <a href="https://www.youtube.com/playlist?list=PLBmRxydnERkysOgOS917Ojc_-uisgb8Aj">Youtube series</a> from <a href="https://www.youtube.com/@FrontendCoding">@FrontendCoding</a> to build a React.Js Chess app. Once I am done following a video (and the code I derived from the video works) I will push up my progress pertaining to that video in a commit, I will also privide the date I pushed that change up here in the table below. </p>
 <img src="https://www.jonathonireland.com/resume/data/files/Screenshot 2024-02-13 at 12.58.46 AM.png" alt="React Chess Board Image" />
+
+<h2>Finding My chess-app online</h2>
+<p>To find my chess app click here: <a href="https://jonathonireland.com/chess-app">https://jonathonireland.com/chess-app</a></p>
 <table>
 <tr><th>Bugs List</th><th>Development Objectives</th></tr>
 <tr>
