@@ -156,9 +156,9 @@ export default function Referee() {
     return promotionPawn?.team === TeamType.OUR ? "w" : "b";
   } 
 
-  function restartGame() { 
+  function restartGame() {
     checkmateModalRef.current?.classList.add("hidden");
-
+    setBoard(initialBoard.clone());
   }
 
 
