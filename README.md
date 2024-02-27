@@ -10,8 +10,8 @@
 <td>
 <ol>
 <li>Once the king is in check other pieces cannot rescue the king.</li>
-<li>Castling should only be possible (and pieces circled when possible moves are implied) when the spaces between the king and rook are vacant.</li>
-<li>Once castling has happened, the king's possible moves shouldnt include moving on top of the rook.</li>
+<li>FIXED! Castling should only be possible (and pieces circled when possible moves are implied) when the spaces between the king and rook are vacant.</li>
+<li>FIXED! Once castling has happened, the king's possible moves shouldnt include moving on top of the rook.</li>
 </ol>
 </td>
 <td>
