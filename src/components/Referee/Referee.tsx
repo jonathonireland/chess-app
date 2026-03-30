@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { initialBoard } from "../../Constants";
 import Chessboard from "../Chessboard/Chessboard";
-import { bishopMove, getPossibleBishopMoves, getPossibleKingMoves, getPossibleKnightMoves, getPossiblePawnMoves, getPossibleQueenMoves, getPossibleRookMoves, kingMove, knightMove, pawnMove, queenMove, rookMove } from "../../referee/rules";
+import { bishopMove, kingMove, knightMove, pawnMove, queenMove, rookMove } from "../../referee/rules";
 import { Piece, Position } from "../../models";
 import { PieceType, TeamType } from "../../Types";
 import { Pawn } from "../../models/Pawn";
@@ -98,6 +98,7 @@ export default function Referee() {
     return false;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   function isValidMove(
     initialPosition: Position,
     desiredPosition: Position,
@@ -167,10 +168,10 @@ export default function Referee() {
       <p style={{ color: "white", fontSize: "24px" }}>{board.totalTurns} {board.totalTurns % 2 === 0 ? `Black Player: Make Your Move`:`White Player: Make Your Move` }</p>
       <div className="modal hidden" ref={modalRef}>
           <div className="modal-body">
-              <img onClick={() => promotePawn(PieceType.ROOK)} src={`/assets/images/rook_${promotionTeamType()}.png`} alt="Rook Piece" />
-              <img onClick={() => promotePawn(PieceType.BISHOP)} src={`/assets/images/bishop_${promotionTeamType()}.png`} alt="Bishop Piece" />
-              <img onClick={() => promotePawn(PieceType.KNIGHT)} src={`/assets/images/knight_${promotionTeamType()}.png`} alt="Knight Piece" />
-              <img onClick={() => promotePawn(PieceType.QUEEN)} src={`/assets/images/queen_${promotionTeamType()}.png`} alt="Queen Piece" />
+              <img onClick={() => promotePawn(PieceType.ROOK)} src={`${process.env.PUBLIC_URL}/assets/images/rook_${promotionTeamType()}.png`} alt="Rook Piece" />
+              <img onClick={() => promotePawn(PieceType.BISHOP)} src={`${process.env.PUBLIC_URL}/assets/images/bishop_${promotionTeamType()}.png`} alt="Bishop Piece" />
+              <img onClick={() => promotePawn(PieceType.KNIGHT)} src={`${process.env.PUBLIC_URL}/assets/images/knight_${promotionTeamType()}.png`} alt="Knight Piece" />
+              <img onClick={() => promotePawn(PieceType.QUEEN)} src={`${process.env.PUBLIC_URL}/assets/images/queen_${promotionTeamType()}.png`} alt="Queen Piece" />
           </div>
       </div>
       <div className="modal hidden" ref={checkmateModalRef}>
