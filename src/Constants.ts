@@ -29,18 +29,6 @@ export const initialBoard: Board = new Board([
         false
     ),
     new Piece(
-        new Position(2, 7),
-        PieceType.BISHOP,
-        TeamType.OPPONENT,
-        false
-    ),
-    new Piece(
-        new Position(3, 7),
-        PieceType.QUEEN,
-        TeamType.OPPONENT,
-        false
-    ),
-    new Piece(
         new Position(3, 7),
         PieceType.QUEEN,
         TeamType.OPPONENT,

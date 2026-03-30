@@ -11,6 +11,6 @@ export class Pawn extends Piece {
   }
 
   clone(): Pawn {
-    return new Pawn(this.position.clone(), this.team, this.hasMoved, this.enPassant, this.possibleMoves?.map(m => m.clone()))
+    return new Pawn(this.position.clone(), this.team, this.hasMoved ?? false, this.enPassant, this.possibleMoves?.map(m => m.clone()))
   }
 }
