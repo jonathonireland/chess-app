@@ -1,256 +1,117 @@
-<h1>React Chess App</h1>
+# React Chess
 
-<p>To find my chess app click here: <a href="https://jonathonireland.com/chess-app">https://jonathonireland.com/chess-app</a></p>
+A browser-based two-player chess game built with React and TypeScript. The project combines drag-and-drop interaction with a typed chess-domain model that calculates legal moves, protects the active king, and coordinates special chess rules.
 
-<p>I followed this <a href="https://www.youtube.com/playlist?list=PLBmRxydnERkysOgOS917Ojc_-uisgb8Aj">Youtube series</a> from <a href="https://www.youtube.com/@FrontendCoding">@FrontendCoding</a> to build a React.Js Chess app. Once I was done following a video (and the code I derived from the video worked well enough to compile and function) I pushed up my progress pertaining to that video in a commit. I also privided the date I pushed that change in the table below and where possible if I created a branch for that tutorial I listed the name of that branch here too. Now that I have concluded the tutorials, I am listing out bugs as I find them. When I finish fixing these bugs, I will start further development objectives as time allows this is a lower priority project than others I have.</p>
-<img src="https://www.jonathonireland.com/resume/data/files/Screenshot 2024-02-13 at 12.58.46 AM.png" alt="React Chess Board Image" />
-<table>
-<tr><th>Bugs List</th><th>Development Objectives</th></tr>
-<tr>
-<td>
-<ol>
-<li>Once the king is in check other pieces cannot rescue the king.</li>
-<li>FIXED! Castling should only be possible (and pieces circled when possible moves are implied) when the spaces between the king and rook are vacant.</li>
-<li>FIXED! Once castling has happened, the king's possible moves shouldnt include moving on top of the rook.</li>
-</ol>
-</td>
-<td>
-<ol>
-<li>Add Captured Pieces to screen</li>
-<li>Add a scrolling list of moves made to the screen.</li>
-<li>Add a persistant data storage for games played and movs made.</li>
-</ol>
-</td>
-</tr>
-</table>
+## Current state
 
-<h2>Chess App Project Branches and Timeline</h2>
-<table>
-<tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
-<tr>
-    <td><a href="https://youtu.be/Iri__zwxwHg?si=iDO4l2P3dyeASPoO">Part 1: The board!</a></td>
-    <td>1/23/2024</td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="https://www.youtube.com/watch?v=HKMcqyfRQoE">Part 2: The pieces!</a></td>
-    <td>1/24/2024</td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/coi5AoV53Es?si=xalgib4_6fwhzEtn">Part 3: Moving pieces</a></td>
-    <td>1/24/2024</td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/zgZOm4iD32U?si=hLXA5R7y3hYEIWML">Part 4: Finishing Movement Control</a></td>
-    <td>1/25/2024</td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/JzCKJOCR3PI?si=QsSlF4lJGEW89wsv">Part 5: Grid Snapping</a</td>
-    <td>1/25/2024</td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/sjgJ-srZrsU?si=M8TxOPPjRWmq0B5I">Part 6: The referee</a</td>
-    <td>1/25/2024</td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/sX0HM52iH8o?si=8Qe8sjr0VqpXqPsH">Part 7: Basic Pawn Rules</a></td>
-    <td>1/26/2024</td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/KDGYZRe8cYI?si=jMadpuc99GWUnLDp">Part 8: Attacking Pawn</a></td>
-    <td>1/26/2024</td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/K92YUaS858M?si=F4EbZlslY9p42l5s">Part 9: En passant</a></td>
-    <td>1/29/2024</td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/a1Fr-EnrAS8?si=_4Gbd81RBN6tZfuH">Part 10: Refactoring</a></td>
-    <td>2/9/2024</td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/d8mrqf71exU?si=rDnyzxgkvty2fv-i">Part 11: Knight Moves</a></td>
-    <td>2/10/2024</td>
-    <td>Part-11-Knight-Movement</td>
-</tr>
-</table>
-<h3>Knight Moves (Previewed)</h3>
-<p>Below the black knight's moves are previewed when it's selected by the black player.</p>
-<img src="https://www.jonathonireland.com/resume/data/files/ReactKnightMoves.png" alt="React Chess App Knight Moves Preview" />
-<table>
-<tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
-<tr>
-    <td><a href="https://youtu.be/ndek8MlGnYw?si=2Rnm-ifIgyPalsl1">Part 12: Bishop Logic</a></td>
-    <td>2/10/2024</td>
-    <td>Part-12-Bishop-Movement</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/8vmukUQze6Q?si=zaWWr0gPo6OyCwOy">Part 13: Bishop Moves</a></td>
-    <td>2/11/2024</td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/NjHvS-RzVBk?si=Puo0ee0smvwUveqt">Part 14: Bishop Attack</a></td>
-    <td>2/11/2024</td>
-    <td>Part-14-Bishop-attack</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/BsAN5n7iIbQ?si=WydnvQtIw1GSYW2A">Part 15: Rook Logic</a></td>
-    <td>2/13/2024</td>
-    <td>Part-15-Bishop-Logic</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/ccyK-z_c2z4?si=_fikwqgllRobaNQH">Part 16: Rook Movement & Attack (and refactor)</a></td>
-    <td>2/13/2024</td>
-    <td>Part-16-Rook-Movement-and-attack</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/K8xYjdvZHmo?si=mjjnoDfmfiNgZaBS">Part 17: Queen Setup (and some extra work)</a></td>
-    <td>2/13/2024</td>
-    <td>Part-17-Queen-Setup</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/D2Rxmfs916I?si=wuz_dUSInLgrOi8j">Part 18: Queen Finished</a></td>
-    <td>2/13/2024</td>
-    <td>Part-18-Queen-Finished</td>
-</tr>
-</table>
-<h3>Queen Moves (Previewed)</h3>
-<p>Below the white queen's moves are previewed when it's selected by the white player.</p>
-<img src="https://www.jonathonireland.com/resume/data/files/ReacttQueenMoves.png" alt="React Chess App Queen Moves Preview" />
-<table>
-<tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
-<tr>
-    <td><a href="https://youtu.be/CmoPebnJktU?si=vx_hLpfp-Rq-mkhf">Part 19: The King</a></td>
-    <td>2/14/2024</td>
-    <td>Part-19-The-King</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/qBWKG0mdsAg?si=HrMlnWTNUE5lLIJ7">Part 20: Refactoring Referee</a></td>
-    <td>2/14/2024</td>
-    <td>Part-20-Refactoring-Referee</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/xEA_2lSV-ow?si=5pKd_rHmWXAugBuE">Part 21: Pawn Promotion</a></td>
-    <td>2/14/2024</td>
-    <td>Part-21-Pawn-Promotion</td>
-</tr>
-</table>
-<h3>Pawn Promotion Example</h3>
-<p>Below is an image of the pawn promotion modal when activated because a pawn has made it's way accross the board.</p>
-<img src="https://www.jonathonireland.com/resume/data/files/ReactPawnPromotion.png"  alt="React Chess App Pawn Promotion example."/>
-<table>
-<tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
-<tr>
-    <td><a href="https://youtu.be/27dtFOb61tM?si=uPB4WDQlzzsLL0SO">Part 22: Preview Moves</a></td>
-    <td>2/15/2024</td>
-    <td>Part-22-Preview-Moves</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/EgutGRqw_oI?si=YMAIsr-m12mcALCS">Part 23: Preview Done</a></td>
-    <td>2/15/2024</td>
-    <td></td>
-</tr>
-</table>
-<h3>Pawn Moves (Previewed)</h3>
-<p>Below is an image of the moves with circles around the pices that the white pawn can attack.</p>
-<img src="https://www.jonathonireland.com/resume/data/files/ReactPawnAttackingMoves.png" alt="React Chess App Pawn Preview Attacking Moves" />
-<table>
-<tr><th>Youtube Link</th><th>Date</th><th>Repository Branch <br/>(if available)</th></tr>
-<tr>
-    <td><a href="https://youtu.be/PsKw6u5SAA8?si=RbQXrXmY0ZKTfCkh">Part 24: Referee Component</a></td>
-    <td>2/18/2024</td>
-    <td>Part-24-Referee-Component-Attempt-2</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/faMfrApfV7o?si=mbZkMwjC8R0ckXxd">Part 25: Object-Oriented</a></td>
-    <td>2/20/2024</td>
-    <td>Part-25-Object-Oriented-Attempt-2</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/ZMLywTMmSq0?si=RIUyCi_ewEIdnOZP">Part 26: Class Inheritance</a></td>
-    <td>2/21/2024</td>
-    <td>Part-26-Class-Inheritance</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/N2EU7vtwsWE?si=jhdExv5OE0zmALQ6">Part 27: Cloning</a></td>
-    <td>2/21/2024</td>
-    <td>Part-27-Cloning</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/U_0JmKTWf48?si=uPhjMrEZyD97m0Du">Part 28: King Danger</a></td>
-    <td>2/22/2024</td>
-    <td>Part-28-king-danger</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/p9FMvX6fGAU?si=cynJJjUGTdjZlujA">Part 29: King Protection</a></td>
-    <td>2/23/2024</td>
-    <td>Part-29-king-protection</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/wNyPCPBBfRo?si=qbLj4SztjLy0Y7wx">Part 30: Castling Logic</a></td>
-    <td>2/23/2024</td>
-    <td>Part-30-Castling-Logic</td>
-</tr>
-<tr>
-    <td><a href="https://youtu.be/veo12qNIJ7o?si=hx6Oprodv_8Kj50Q">Part 31: Checkmate</a></td>
-    <td>2/24/2024</td>
-    <td>Part-31-Checkmate</td>
-</tr>
-</table>
+The game currently supports local play for two people sharing the same browser.
 
-# Getting Started with Create React App
+Implemented features include:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- A complete chessboard with all standard pieces
+- Alternating white and black turns
+- Drag-and-drop piece movement with board-boundary constraints
+- Highlighted legal destinations for the selected piece
+- Standard movement and capture rules for every piece type
+- Move simulation that removes choices that would leave the active king in danger
+- King-side and queen-side castling
+- En passant
+- Pawn-promotion selection
+- End-of-game winner display
+- Restarting the game from a fresh board
 
-## Available Scripts
+The README intentionally does not embed externally hosted screenshots. The previous image URLs were tied to an older portfolio location and had become unreliable.
 
-In the project directory, you can run:
+## Technology
 
-### `npm start`
+- React 18
+- TypeScript
+- Create React App
+- CSS
+- React Testing Library and Jest tooling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How the game is organized
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The application separates board interaction from most chess-domain behavior:
 
-### `npm test`
+- `Chessboard` renders the tiles and pieces, tracks pointer movement, and converts a drop into a proposed destination.
+- `Referee` coordinates turns, accepted moves, en passant, promotion, end-of-game feedback, and React state updates.
+- `Board` owns the active piece collection, calculates possible moves, simulates moves for king safety, applies captures and castling, and determines whether the next player has legal moves.
+- `Piece`, `Pawn`, and `Position` provide typed, cloneable domain objects.
+- `referee/rules` contains the movement calculations used by the board model.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+When a move is proposed, the application clones the previous board, applies the accepted state transition, recalculates possible moves, and supplies the updated model to React.
 
-### `npm run build`
+## Run locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js
+- npm
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install dependencies:
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Start the development server:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Open [http://localhost:3000](http://localhost:3000).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Create a production build:
 
-## Learn More
+```bash
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Run the test command:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm test
+```
+
+## Current limitations
+
+- Both sides are controlled locally; there is no computer opponent.
+- Captured pieces are removed from the board but are not displayed separately.
+- The game does not show algebraic notation or a move-history panel.
+- End-state handling should distinguish checkmate from stalemate and other draw conditions.
+- Automated tests currently cover the application scaffold rather than the important chess-rule scenarios.
+- The interaction is primarily mouse-oriented and would benefit from stronger touch, keyboard, and responsive support.
+- Promotion and other special moves need additional regression tests and state-flow hardening.
+
+## Possible future improvements
+
+### Gameplay
+
+- Display captured pieces for both players.
+- Add a scrolling move history using algebraic chess notation.
+- Add a computer-controlled opponent with selectable difficulty.
+- Let the player choose a color when playing against the computer.
+- Add check indicators and clearer current-player messaging.
+- Distinguish checkmate, stalemate, insufficient material, repetition, and the fifty-move rule.
+- Support resignation, draw offers, undo for local games, and game review.
+- Add clocks and configurable time controls.
+
+### Engineering
+
+- Add focused unit tests for every piece and special rule.
+- Add board fixtures for pins, checks, castling, en passant, promotion, checkmate, and stalemate.
+- Move modal visibility fully into React state instead of manipulating CSS classes through refs.
+- Strengthen immutable state transitions and remove remaining duplicated rule paths.
+- Improve keyboard navigation, screen-reader announcements, touch interaction, and responsive sizing.
+- Save games locally or through an API and support replaying serialized moves.
+- Modernize the build tooling beyond Create React App when the project is next upgraded.
+
+## Project background
+
+This project began by following the [Frontend Coding React Chess tutorial series](https://www.youtube.com/playlist?list=PLBmRxydnERkysOgOS917Ojc_-uisgb8Aj). The repository retains the incremental branches and commits from that learning process, while the current code and this README focus on the resulting application rather than reproducing the tutorial timeline.
+
+## Portfolio context
+
+React Chess complements my Python/Pygame and C#/.NET chess projects. Together, they show how the same rules-heavy domain can be modeled through three different languages, UI frameworks, and state-management approaches.
