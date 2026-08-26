@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { initialBoard } from "../../Constants";
 import Chessboard from "../Chessboard/Chessboard";
 import { bishopMove, kingMove, knightMove, pawnMove, queenMove, rookMove } from "../../referee/rules";
@@ -7,49 +7,145 @@ import { PieceType, TeamType } from "../../Types";
 import { Pawn } from "../../models/Pawn";
 import { Board } from "../../models/Board";
 
+interface LegalMove {
+  piece: Piece;
+  destination: Position;
+}
+
+function getLegalMoves(board: Board, team: TeamType): LegalMove[] {
+  return board.pieces
+    .filter(piece => piece.team === team)
+    .flatMap(piece =>
+      (piece.possibleMoves ?? []).map(destination => ({
+        piece,
+        destination
+      }))
+    );
+}
+
+function isEnPassantMove(
+  currentBoard: Board,
+  initialPosition: Position,
+  desiredPosition: Position,
+  type: PieceType,
+  team: TeamType
+): boolean {
+    const pawnDirection = team === TeamType.OUR ? 1 : -1;
+
+    if (type === PieceType.PAWN){
+      if (
+        (desiredPosition.x - initialPosition.x === -1 || desiredPosition.x - initialPosition.x === 1) && 
+        desiredPosition.y - initialPosition.y === pawnDirection
+      ) {
+      const piece = currentBoard.pieces.find(
+        (p) => 
+          p.position.x === desiredPosition.x && 
+          p.position.y === desiredPosition.y - pawnDirection && 
+          p.isPawn &&
+          (p as Pawn).enPassant
+      );
+      if(piece){
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
 export default function Referee() { 
   const [board, setBoard] = useState<Board>(initialBoard);
   const [promotionPawn, setPromotionPawn] = useState<Piece>();
   const modalRef = useRef<HTMLDivElement>(null); 
   const checkmateModalRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (
+      board.currentTeam !== TeamType.OPPONENT ||
+      board.winningTeam !== undefined
+    ) {
+      return;
+    }
+
+    const legalMoves = getLegalMoves(board, TeamType.OPPONENT);
+
+    console.log(`The Black AI has ${legalMoves.length} legal moves.`);
+
+    if (legalMoves.length === 0) return;
+
+    const randomIndex = Math.floor(Math.random() * legalMoves.length);
+    const selectedMove = legalMoves[randomIndex];
+
+    console.log("The Black AI selected:", {
+      piece: selectedMove.piece.type,
+      from: `(${selectedMove.piece.position.x}, ${selectedMove.piece.position.y})`,
+      to: `(${selectedMove.destination.x}, ${selectedMove.destination.y})`
+    });
+
+    const aiMoveTimer = window.setTimeout(() => {
+      setBoard(previousBoard => {
+        // Protect against executing a stale AI move.
+        if (previousBoard.currentTeam !== TeamType.OPPONENT) {
+          return previousBoard;
+        }
+
+        const clonedBoard = previousBoard.clone();
+        clonedBoard.totalTurns += 1;
+
+        clonedBoard.playMove(
+          false,
+          true,
+          selectedMove.piece,
+          selectedMove.destination
+        );
+
+        return clonedBoard;
+      });
+    }, 600);
+
+    return () => window.clearTimeout(aiMoveTimer);
+    console.log(legalMoves);
+  }, [board]);
+
   function playMove(playedPiece: Piece, destination: Position): boolean {
+    if(playedPiece.team !== TeamType.OUR ) return false;
     // if the playing piece doesn't have any moves, return
     if (playedPiece.possibleMoves === undefined) return false;
     // prevent the inactive team from playing
     if (playedPiece.team === TeamType.OUR && board.totalTurns % 2 !== 1) return false;
-    if (playedPiece.team === TeamType.OPPONENT && board.totalTurns % 2 !== 0) return false;
+    if (board.totalTurns % 2 !== 1) return false;
 
     
     let playedMoveIsValid = false;
 
-    const validMove = playedPiece.possibleMoves?.some(m => m.samePosition(destination));
-
-    if (!validMove) return false;
-    
-    const enPassantMove = isEnPassantMove(
-      playedPiece.position,
-      destination,
-      playedPiece.type, 
-      playedPiece.team
+    const validMove = playedPiece.possibleMoves.some(move =>
+      move.samePosition(destination)
     );
 
-    // playmove modifies the board ths we 
-    // need to call setBoard
+    if (!validMove) return false;
+
     setBoard(previousBoard => {
+      const enPassantMove = isEnPassantMove(
+        previousBoard,
+        playedPiece.position,
+        destination,
+        playedPiece.type,
+        playedPiece.team
+      );
+
       const clonedBoard = previousBoard.clone();
-      // Increment totalTurns
-      clonedBoard.totalTurns +=1;
-      // Playing the move
+      clonedBoard.totalTurns += 1;
+
       playedMoveIsValid = clonedBoard.playMove(
         enPassantMove,
         validMove,
         playedPiece,
         destination
       );
+
       if (clonedBoard.winningTeam !== undefined) {
         checkmateModalRef.current?.classList.remove("hidden");
       }
+
       return clonedBoard;
     });
     
@@ -68,34 +164,6 @@ export default function Referee() {
     }
     
     return playedMoveIsValid;
-  }
-
-  function isEnPassantMove(
-    initialPosition: Position,
-    desiredPosition: Position,
-    type: PieceType,
-    team: TeamType
-  ){
-    const pawnDirection = team === TeamType.OUR ? 1 : -1;
-
-      if (type === PieceType.PAWN){
-        if (
-          (desiredPosition.x - initialPosition.x === -1 || desiredPosition.x - initialPosition.x === 1) && 
-          desiredPosition.y - initialPosition.y === pawnDirection
-        ) {
-        const piece = board.pieces.find(
-          (p) => 
-            p.position.x === desiredPosition.x && 
-            p.position.y === desiredPosition.y - pawnDirection && 
-            p.isPawn &&
-            (p as Pawn).enPassant
-        );
-        if(piece){
-          return true;
-        }
-      }
-    }
-    return false;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -133,7 +201,7 @@ export default function Referee() {
         return;
     }
     setBoard((previousBoard) => { 
-      const clonedBoard = board.clone();
+      const clonedBoard = previousBoard.clone();
 
       clonedBoard.pieces = clonedBoard.pieces.reduce(
         (results, piece) => {
