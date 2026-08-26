@@ -88,22 +88,36 @@ export class Board {
     }
 
     getValidMoves(piece: Piece, boardState: Piece[]): Position[] {
+        let possibleMoves: Position[] = [];
+
         switch (piece.type) {
             case PieceType.PAWN:
-                return getPossiblePawnMoves(piece, boardState);
+                possibleMoves = getPossiblePawnMoves(piece, boardState);
+                break;
             case PieceType.KNIGHT:
-                return getPossibleKnightMoves(piece, boardState);
+                possibleMoves = getPossibleKnightMoves(piece, boardState);
+                break;
             case PieceType.BISHOP:
-                return getPossibleBishopMoves(piece, boardState);
+                possibleMoves = getPossibleBishopMoves(piece, boardState);
+                break;
             case PieceType.ROOK:
-                return getPossibleRookMoves(piece, boardState);
+                possibleMoves = getPossibleRookMoves(piece, boardState);
+                break;
             case PieceType.QUEEN:
-                return getPossibleQueenMoves(piece, boardState);
+                possibleMoves = getPossibleQueenMoves(piece, boardState);
+                break;
             case PieceType.KING:
-                return getPossibleKingMoves(piece, boardState);
-            default:
-                return [];
+                possibleMoves = getPossibleKingMoves(piece, boardState);
+                break;
         }
+
+        return possibleMoves.filter(
+            move =>
+                move.x >= 0 &&
+                move.x <= 7 &&
+                move.y >= 0 &&
+                move.y <= 7
+        );
     }
 
     playMove(enPassantMove: boolean,
