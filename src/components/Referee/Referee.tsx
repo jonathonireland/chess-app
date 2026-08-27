@@ -103,7 +103,6 @@ export default function Referee() {
     }, 600);
 
     return () => window.clearTimeout(aiMoveTimer);
-    console.log(legalMoves);
   }, [board]);
 
   function playMove(playedPiece: Piece, destination: Position): boolean {
